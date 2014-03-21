@@ -24,7 +24,8 @@ class Handler {
 	
 	
 	public static function upload_video($name, $ext) {
-		$savedFile = $name . "." . $ext;
+		$savedFile = $name. rand(). "." . $ext;
+		echo $savedFile;
 		$file = fopen ( "video/" . $savedFile, "w" );
 		if (! $file) {
 			deliver_response ( 300, "Failed!", null );
